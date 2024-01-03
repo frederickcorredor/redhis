@@ -4,11 +4,6 @@
     padding: 0px;
     
 }
-body{
-    background-image: url();
-    background-attachment: fixed;
-    background-size: cover;
-}
 
 section{
     margin-top: 16px;
@@ -32,7 +27,6 @@ section{
 
 .boton{
     margin: 24px 0px;
-    width: 100%;
     text-align: center;
 }
 .boton a{
@@ -58,8 +52,8 @@ header{
     background-size: cover;
     background-attachment: fixed;
     background-position: right;
-    width: 100%;
-    min-height: 95vh;
+
+    min-height: 97vh;
     font-size: 29px;
     color: white;
     display: flex;
@@ -174,4 +168,54 @@ header p {
 
 .ultimollamado p{
     max-width: 1200px;
+}
+
+.botonwhatsapp{
+    position: fixed;
+    bottom: 24px;
+    right: 12px;
+    text-align: center;
+    color: green;
+    font-size: 21px;
+}
+
+.botonwhatsapp img{
+    width: 75px;
+    border-radius: 100%;
+}
+
+.botonwhatsapp a{
+    border: none;
+    width: 75px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+@media (min-width:600px) {
+    .botonwhatsapp{
+        display: none;
+        
+    }
+
+    .convierte{
+        position: fixed;
+        bottom: 0px;
+        padding: 6px;
+        background-color: rgba(255, 255, 255, 0.684);
+        border: 4px rgb(54, 52, 52) solid;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width:500px){
+    header{
+        background-position: 650px;
+    }
+    .cuadro{
+        background-color: rgba(0, 0, 0, 0.728);
+        width: 80%;
+        margin: 0px;
+    }
 }
