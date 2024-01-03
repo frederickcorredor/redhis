@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    
+}
+body{
+    background-image: url();
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section{
+    margin-top: 16px;
+    border: 2px solid black;
+}
+
+.seccion2{
+    background-image: url(fondo1.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.seccion3{
+    background-image: url(fondo1.png);
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boton{
+    margin: 24px 0px;
+    width: 100%;
+    text-align: center;
+}
+.boton a{
+    background-color: rgba(0, 0, 255, 0.77);
+    color:white;
+    border: 3px black solid;
+    padding: 6px 24px;
+}
+
+h1{
+    margin: 24px;
+}
+
+h2{
+    text-align: center;
+    color: white;
+    margin: 24px;
+    font-size: 34px;
+}
+
+header{
+    background-image: url("fondo1.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right;
+    width: 100%;
+    min-height: 95vh;
+    font-size: 29px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+    padding: 24px;
+}
+
+a{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.474);
+    border: 2px white solid;
+    border-radius: 16px;
+    padding: 6px 16px;
+    margin: 24px;
+    text-decoration: none;
+}
+
+header div{
+    margin: 24px;
+    width: 60%;
+    min-width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+header p {
+    padding: 30px;
+}
+
+.seccion1 img{
+    width: 300px;
+    
+}
+
+.seccion1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto1{
+    width: 50%;
+    min-width: 350px;
+    max-width: 600px;
+    font-size: 24px;
+    margin: 24px;
+    padding: 24px;
+    background-color: white;
+}
+
+.seccion2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+
+}
+
+.cuadrotestimonios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 24px;
+    padding: 24px;
+}
+
+.testimonio img{
+    width: 150px;
+    border-radius: 100%;
+}
+
+
+.testimonio{
+    width: 25%;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    margin: 24px;
+    background-color: white;
+    border-radius: 16px;
+}
+
+.texto2{
+    font-size: 29px;
+    margin: 24px;
+    padding: 24px;
+    max-width: 1200px;
+    color: white;
+}
+
+.convierte{
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    margin: 16px;
+    padding: 16px;
+}
+
+.ultimollamado{
+    font-size: 34px;
+    padding: 24px;
+    text-align: center;
+}
+
+.ultimollamado p{
+    max-width: 1200px;
+}
