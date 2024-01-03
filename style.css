@@ -212,6 +212,7 @@ header p {
 @media (max-width:500px){
     header{
         background-position: 650px;
+        font-size:24px;
     }
     .cuadro{
         background-color: rgba(0, 0, 0, 0.728);
