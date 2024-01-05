@@ -145,8 +145,8 @@ header p {
 }
 
 .equipo{
-    width: 25%;
-    min-width: 140px;
+    width: 35%;
+    min-width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
