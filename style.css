@@ -131,6 +131,8 @@ header a:hover{
     background-color: rgb(242, 236, 226);
 }
 
+
+
 .texto1{
     width: 70%;
     min-width: 350px;
@@ -138,14 +140,16 @@ header a:hover{
     font-size: 24px;
     margin: 24px;
     padding: 24px;
-
-
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .iconos{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     padding: 12px;
     margin: 6px;
     width: 100%;
@@ -256,24 +260,12 @@ header a:hover{
     max-width: 1200px;
 }
 
-.botonwhatsapp{
-    position: fixed;
-    bottom: 94px;
-    right: 18px;
-    text-align: center;
-    color: green;
-    font-size: 21px;
-}
 
-.botonwhatsapp img{
-    width: 50px;
+.wasa{
+    width: 45px;
     border-radius: 100%;
-}
-
-.botonwhatsapp a{
     border: none;
-    width: 75px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(240, 248, 255, 0);
 }
 
 .mapa{
@@ -286,6 +278,7 @@ header a:hover{
     width: 100%;
     background-image: url(IMG_8356-edit.jpg);
     background-size: cover;
+    padding-bottom: 50px;
 }
 .textomapa{
     width: 30%;
@@ -322,7 +315,7 @@ header a:hover{
 }
 
 @media (min-width:600px) {
-    .botonwhatsapp{
+    .wasa{
         display: none;
         
     }
