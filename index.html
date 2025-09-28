@@ -45,7 +45,7 @@
     /* Hero */
     .hero{display:flex;flex-direction:row;gap:28px;align-items:center;padding:24px;background:var(--white);border-radius:16px;box-shadow:0 6px 30px rgba(11,61,145,0.06)}
     .hero-left{flex:1;display:flex;flex-direction:column;gap:12px}
-    .hero h1{margin:0;font-size:32px;color:var(--blue);text-wrap: pretty;line-height:1.2}
+    .hero h1{margin:0;font-size:30px;color:var(--blue);text-wrap: pretty;line-height:1.2}
     .muted{color:var(--muted)}
     .cta-row{display:flex;gap:12px;align-items:center}
     .btn{background:var(--blue);color:var(--white);padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700;transition:var(--transition);width: 100%;border: solid 1px white;}
@@ -58,7 +58,7 @@
 
     /* Sections */
     section{margin-top:18px}
-    .section-inner{display:flex;flex-direction: row-reverse;gap:20px;align-items:flex-start;background:var(--white);padding:6px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.04);align-items: center;}
+    .section-inner{display:flex;flex-direction: row-reverse;gap:20px;align-items:flex-start;padding:6px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.04);align-items: center;}
     .sec-left{flex:1;max-width: 95%;background: linear-gradient(180deg, var(--accent), #fff);padding: 16px;border-radius: 16px;border:solid 1px #0b3d91 ;}
     .sec-right{width:360px;flex:0 0 360px;display: flex;flex-wrap: wrap;align-content: center;justify-content: center;align-items: center;}
 
@@ -73,7 +73,7 @@
     .benefit{display:flex;gap:12px;align-items:flex-start}
     .benefit .dot{width:12px;height:12px;border-radius:50%;background:var(--red);margin-top:6px}
 
-    .mini-cta{display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(90deg, rgba(178,34,52,0.08), rgba(11,61,145,0.06));border-radius:12px;flex-wrap: wrap;gap: 16px;text-align: center;flex-direction: column;}
+    .mini-cta{display:flex;align-items:center;justify-content:center;padding:12px;border-radius:12px;flex-wrap: wrap;gap: 16px;text-align: center;flex-direction: column;background: linear-gradient(90deg, #0b3d91 0%, #b22234 100%);color: var(--white);}
 
     /* Carousel */
     .carousel{position:relative;overflow:hidden;border-radius:12px}
@@ -93,6 +93,7 @@
     .imagenLlamado img{width:100%; max-width: 650px; height:auto;display:block;margin-top:16px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
 
     /* Form */
+    #contacto{background-image: url(fondoformulario.webp);background-size: cover;border-radius: 24px;background-attachment: fixed;}
     form{display:flex;flex-direction:column;gap:12px}
     input,select,textarea{padding:8px;border-radius:10px;border:1px solid #e6e9ee;font-size:14px}
     label{font-weight:600;color:white}
@@ -128,6 +129,36 @@
     .logo{animation:floaty 6s ease-in-out infinite}
   </style>
 </head>
+<!-- Cookie Consent -->
+<div id="cookie-banner" style="
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: rgb(0, 0, 0);
+  background-color: white;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  gap: 16px;
+  z-index: 9999;
+">
+  <div style="max-width: 70%;">
+    Usamos cookies para mejorar tu experiencia. Al continuar, aceptas nuestra 
+    <a href="politicas-de-privacidad.html" style="color:#000000; text-decoration:underline;">Política de Privacidad</a>.
+  </div>
+  <button id="accept-cookies" style="
+    color: white;
+    background: #0b3d91;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  ">Aceptar</button>
+</div>
 <body>
   <div class="wrap">
     <!-- Header -->
@@ -188,8 +219,8 @@
     <section style="margin-top:14px">
       <div class="mini-cta reveal" id="mini-cta">
         <div>
-          <strong>¿Listo para empezar?</strong>
-          <div class="muted">Agenda tu evaluación gratuita y conoce las mejores alternativas legales para tu caso.</div>
+          <h3>¿Listo para empezar?</h3>
+          <div>Agenda tu evaluación gratuita y conoce las mejores alternativas legales para tu caso.</div>
         </div>
         <div>
           <button class="btn" id="cta-mid">Evaluar mi caso</button>
@@ -567,14 +598,14 @@
           </form>
         </div>
         <div class="sec-right">
-          <div style="padding:12px;background:linear-gradient(180deg,var(--accent),#fff);border-radius:12px;text-align:left">
-            <strong>Beneficios inmediatos</strong>
-            <ul style="margin-top:8px;color:var(--muted)">
+          <div style="padding:12px;background:linear-gradient(180deg,var(--accent),#ffffffaf);border-radius:12px;text-align:left">
+            <h3>Beneficios inmediatos</h3>
+            <ul style="margin-top:8px;list-style-type:disc;padding-left:20px;font-size:14px">
               <li>Evaluación confidencial sin costo</li>
               <li>Conexión con abogados en cualquier estado</li>
               <li>Seguimiento personalizado hasta la solución</li>
             </ul>
-            <div style="margin-top:12px"><small class="muted">La información que envíes se utiliza únicamente para evaluación legal y contacto.</small></div>
+            <div style="margin-top:12px"><small>La información que envíes se utiliza únicamente para evaluación legal y contacto.</small></div>
           </div>
         </div>
       </div>
@@ -722,6 +753,18 @@ if (form && submitBtn) {
     /* Optional: unmute video cuando se reproduce */
     const v = document.getElementById('ceoVideo');
     v && v.addEventListener('play', ()=>{ v.muted = false });
+
+
+      // Ocultar banner si ya aceptó
+  if (localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  // Guardar aceptación
+  document.getElementById('accept-cookies').addEventListener('click', function () {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  });
 
   </script>
 </body>
