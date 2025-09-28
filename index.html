@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vive Legalmente — Evaluación Migratoria Gratis | RedHis</title>
+  <meta name="description" content="RedHis: canal de comunicación con abogados de inmigración en español. Evaluación gratuita de tu caso, representación en corte, visas U, VAWA, asilo y más. Vive legalmente en EE.UU." />
+  <meta name="keywords" content="legalización migratoria, abogados de inmigración en español, evaluación gratis, visa U, asilo, residencia, ajuste de estatus, RedHis" />
+  <style>
+    /* Variables */
+    :root{
+      --blue:#0b3d91;
+      --red:#b22234;
+      --white:#ffffff;
+      --accent:#f5f7fa;
+      --muted:#6b7280;
+      --container-width:1100px;
+      --transition: 300ms cubic-bezier(.2,.9,.2,1);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;}
+    body{
+      background: linear-gradient(180deg, #fafbfd 0%, #f4f7fb 100%);
+      color:#0f1724; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+    }
+    .wrap{max-width:var(--container-width);margin:24px auto;padding:18px;}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;box-shadow:0 6px 18px rgba(11,61,145,0.12);overflow:hidden}
+    .logo img{width:100%;height:auto;display:block}
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{color:var(--blue);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px}
+    .cta-header{background:var(--red);color:var(--white);padding:8px 12px;border-radius:10px;cursor:pointer;transition:var(--transition);border:none}
+    .cta-header:hover{transform:translateY(-3px)}
+
+    /* Mobile hamburger */
+    .hamburger{display:none;border:none;background:transparent;padding:8px;cursor:pointer}
+    .hamburger .bar{width:22px;height:2px;background:var(--blue);display:block;margin:4px 0;border-radius:2px;transition:transform 180ms ease, opacity 180ms ease}
+    .mobile-nav{display:none;flex-direction:column;gap:6px;background:var(--white);position:absolute;right:18px;top:76px;padding:12px;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+    .mobile-nav a{color:var(--blue);padding:8px 10px;border-radius:8px}
+
+    /* Hero */
+    .hero{display:flex;flex-direction:row;gap:28px;align-items:center;padding:24px;background:var(--white);border-radius:16px;box-shadow:0 6px 30px rgba(11,61,145,0.06)}
+    .hero-left{flex:1;display:flex;flex-direction:column;gap:12px}
+    .hero h1{margin:0;font-size:32px;color:var(--blue);text-wrap: pretty;line-height:1.2}
+    .muted{color:var(--muted)}
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .btn{background:var(--blue);color:var(--white);padding:12px 18px;border-radius:12px;border:none;cursor:pointer;font-weight:700;transition:var(--transition)}
+    .btn.secondary{background:transparent;color:var(--blue);border:2px solid var(--blue)}
+    .pill{padding:6px 10px;border-radius:999px;background:var(--accent);display:inline-block}
+
+    .hero-right{flex:1;display:flex;flex-direction:column;gap:12px;align-items:center}
+    .video-card{width:70%;border-radius:12px;overflow:hidden;box-shadow:0 10px 30px rgba(2,6,23,0.08)}
+    .video-card video{width:100%;height:auto;object-fit:cover;display:block}
+
+    /* Sections */
+    section{margin-top:18px}
+    .section-inner{display:flex;flex-direction: row-reverse;gap:20px;align-items:flex-start;background:var(--white);padding:6px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
+    .sec-left{flex:1;max-width: 95%;background: linear-gradient(180deg, var(--accent), #fff);padding: 16px;border-radius: 16px;border:solid 1px #0b3d91 ;}
+    .sec-right{width:360px;flex:0 0 360px;display: flex;flex-wrap: wrap;align-content: center;justify-content: center;align-items: center;}
+
+    .benefits{display:flex;flex-direction:column;gap:10px}
+    .benefit{display:flex;gap:12px;align-items:flex-start}
+    .benefit .dot{width:12px;height:12px;border-radius:50%;background:var(--red);margin-top:6px}
+
+    .mini-cta{display:flex;align-items:center;justify-content:center;padding:12px;background:linear-gradient(90deg, rgba(178,34,52,0.08), rgba(11,61,145,0.06));border-radius:12px;flex-wrap: wrap;gap: 16px;text-align: center;flex-direction: column;}
+
+    /* Carousel */
+    .carousel{position:relative;overflow:hidden;border-radius:12px}
+    .carousel-track{display:flex;transition:transform 600ms cubic-bezier(.2,.9,.2,1);will-change:transform}
+    .carousel-item{min-width:100%;display:flex;align-items:center;gap:12px;padding:18px;justify-content:center}
+    .testimonial{display:flex;gap:14px;align-items:center}
+    .testimonial img{width:70px;height:70px;border-radius:50%;object-fit:cover}
+    .team-slide{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+    .team-card{width:140px;display:flex;flex-direction:column;align-items:center;gap:8px}
+    .team-card img{width:140px;height:140px;border-radius:12px;object-fit:cover;display:block}
+    .team-name{font-weight:700;text-align:center;font-size:15px}
+    .team-role{font-size:13px;color:var(--muted);text-align:center}
+
+    .carousel-nav{position:absolute;top:50%;left:12px;right:12px;display:flex;justify-content:space-between;transform:translateY(-50%)}
+    .nav-btn{background:rgba(255,255,255,0.95);border-radius:999px;padding:8px 10px;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(2,6,23,0.08)}
+    .imagenLlamado{margin-top:16px;width:100%;max-width:var(--container-width);border-radius:12px;overflow:hidden;box-shadow:0 6px 20px rgba(2,6,23,0.04);display: flex; justify-content: center;}
+    .imagenLlamado img{width:100%; max-width: 650px; height:auto;display:block;margin-top:16px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.04)}
+
+    /* Form */
+    form{display:flex;flex-direction:column;gap:12px}
+    input,select,textarea{padding:12px;border-radius:10px;border:1px solid #e6e9ee;font-size:15px}
+    label{font-weight:600;color:var(--muted)}
+    .form-grid{display:flex;flex-direction:row;gap:12px}
+    .form-grid > *{flex:1;}
+    @media (max-width:600px){
+      .form-grid{flex-direction:column}
+    }
+
+    /* Footer */
+    footer{margin-top:18px;padding:18px;border-radius:12px;background:linear-gradient(90deg,#0b3d91 0%, #b22234 100%);color:var(--white);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{flex-direction:column}
+      .section-inner{flex-direction:column}
+      .sec-right{width:100%;flex:1}
+      .wrap{padding:12px}
+      .video-card{width:100%}
+      .video-card video{height:auto}
+      .hamburger{display:block}
+      nav{display:none}
+      .mobile-nav{display:flex}
+      .carousel-nav{left:6px;right:6px}
+    }
+
+    /* Animations */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity 600ms var(--transition), transform 600ms var(--transition)}
+    .reveal.visible{opacity:1;transform:none}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+    .logo{animation:floaty 6s ease-in-out infinite}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="logo"><img src="logorh.png" alt="Logo RedHis"></div>
+        <div>
+          <div style="font-weight:800;color:var(--blue)">RedHis</div>
+          <div style="font-size:13px;color:var(--muted)">Canal de comunicación con abogados de inmigración</div>
+        </div>
+      </div>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Menú principal">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#testimonios">Testimonios</a>
+        <button class="cta-header" id="cta-top">Evaluación gratis</button>
+      </nav>
+
+      <!-- Hamburger / Mobile nav -->
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobileNav" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <div id="mobileNav" class="mobile-nav" aria-hidden="true" style="display:none">
+        <a href="#nosotros" class="mobile-link">Nosotros</a>
+        <a href="#servicios" class="mobile-link">Servicios</a>
+        <a href="#testimonios" class="mobile-link">Testimonios</a>
+        <button class="cta-header" id="cta-top-mobile" style="width:100%;">Evaluación gratis</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero reveal" aria-labelledby="hero-title">
+      <div class="hero-left">
+        <h1 id="hero-title">La verdadera libertad comienza aquí <br> Evalúa tu caso <span class="pill">SIN COSTO</span></h1>
+        <p class="muted">Conectamos a la comunidad hispana con abogados de inmigración en cualquier parte de EE.UU. Permiso de trabajo, asilo, residencia, peticiones familiares y representación en corte.</p>
+        <div class="cta-row">
+          <button class="btn" id="btn-eval">Quiero mi evaluación gratis</button>
+          <button class="btn secondary" id="btn-llamar">Hablar ahora</button>
+        </div>
+        <div style="margin-top:8px;color:var(--muted);font-size:14px">Atención en español · Confidencial · Más de 1000 casos evaluados</div>
+      </div>
+      <div class="hero-right">
+        <div class="video-card">
+          <video id="ceoVideo" controls playsinline muted preload="metadata" poster="poster.webp">
+            <source src="videohero.webm" type="video/mp4">
+            Tu navegador no soporta video.
+          </video>
+        </div>
+        <div style="font-size:13px;color:var(--muted);text-align:center">Palabras motivacionales para quienes buscan un nuevo comienzo.</div>
+      </div>
+    </section>
+
+    <!-- Mini CTA -->
+    <section style="margin-top:14px">
+      <div class="mini-cta reveal" id="mini-cta">
+        <div>
+          <strong>¿Listo para empezar?</strong>
+          <div class="muted">Agenda tu evaluación gratuita y conoce las mejores alternativas legales para tu caso.</div>
+        </div>
+        <div>
+          <button class="btn" id="cta-mid">Evaluar mi caso</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="reveal">
+      <div class="section-inner">
+        <div class="sec-left">
+          <h2>Servicios migratorios especializados</h2>
+          <p class="muted">Buscamos el abogado correcto y la estrategia ideal tras un análisis profundo y personalizado de tu caso.</p>
+          <div style="margin-top:12px" class="benefits">
+            <div class="benefit"><div class="dot"></div><div><strong>Asilos y protección</strong><div class="muted">Apoyo completo para solicitudes de asilo basadas en persecución o riesgo.</div></div></div>
+            <div class="benefit"><div class="dot"></div><div><strong>Visa U, VAWA y Visa T</strong><div class="muted">Protección y alternativas para víctimas de violencia y crímenes.</div></div></div>
+            <div class="benefit"><div class="dot"></div><div><strong>Peticiones familiares y residencias</strong><div class="muted">Procesos consulares, ajuste de estatus y trámites para reunir a tu familia.</div></div></div>
+            <div class="benefit"><div class="dot"></div><div><strong>Procesos en corte</strong><div class="muted">Representación sólida en corte de inmigración con preparación exhaustiva.</div></div></div>
+          </div>
+        </div>
+
+        <div class="sec-right">
+            <div class="video-card">
+                <video src="testimonio1.webm" controls></video>
+            </div>
+            
+          <div style="background:linear-gradient(180deg, #ffffff, var(--accent));padding:14px;border-radius:12px;text-align:center">
+            <div style="font-weight:800;color:var(--blue)">¿Por qué elegirnos?</div>
+            <p class="muted" style="font-size:14px">Atención en español, abogados en todo EE.UU y una evaluación gratis que puede cambiar tu vida.</p>
+            <div style="margin-top:12px"><button class="btn" id="cta-side">Evaluación sin costo</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo carousel -->
+    <section id="equipo" class="reveal" style="margin-top:16px">
+      <h2>Conoce al equipo — Estamos contigo en todo EE.UU</h2>
+      <p class="muted">Un equipo multidisciplinario que acompaña a la comunidad hispana: directores, evaluadores, coordinadores y manejadores de caso.</p>
+
+      <div style="margin-top:12px;" class="carousel" aria-roledescription="carousel" aria-label="Fotos del equipo">
+        <div class="carousel-track" id="teamTrack">
+          <!-- We'll create slides of 4 team members each (24 people -> 6 slides) -->
+          <!-- ORDER preserved as requested -->
+          <!-- Slide 1 -->
+          <div class="carousel-item" aria-hidden="false">
+            <div class="team-slide">
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Esmeralda Rincon">
+                <div class="team-name">Esmeralda Rincon</div>
+                <div class="team-role">Directora de servicios</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Andres Trujillo">
+                <div class="team-name">Andres Trujillo</div>
+                <div class="team-role">Director de proyectos</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Pablo Quintero">
+                <div class="team-name">Pablo Quintero</div>
+                <div class="team-role">Coordinador de contratación y cartera</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Maira Rodriguez">
+                <div class="team-name">Maira Rodriguez</div>
+                <div class="team-role">Contratación y cartera</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" aria-hidden="true">
+            <div class="team-slide">
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Sandra Barajas">
+                <div class="team-name">Sandra Barajas</div>
+                <div class="team-role">Evaluadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Sofia Culma">
+                <div class="team-name">Ag.da Sofia Culma</div>
+                <div class="team-role">Directora Operativa</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Ruth Silva">
+                <div class="team-name">Ruth Silva</div>
+                <div class="team-role">Evaluadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Sebastian Perdomo">
+                <div class="team-name">Sebastian Perdomo</div>
+                <div class="team-role">Evaluador de caso</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" aria-hidden="true">
+            <div class="team-slide">
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Carlos Garcia">
+                <div class="team-name">Carlos Garcia</div>
+                <div class="team-role">Evaluador de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Alba Herrera">
+                <div class="team-name">Alba Herrera</div>
+                <div class="team-role">Evaluadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Andrea Cardenas">
+                <div class="team-name">Andrea Cardénas</div>
+                <div class="team-role">Evaluadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Gladys Ospina">
+                <div class="team-name">Gladys Ospina</div>
+                <div class="team-role">Evaluadora de caso</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="carousel-item" aria-hidden="true">
+            <div class="team-slide">
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Johana Tamara">
+                <div class="team-name">Johana Tamara</div>
+                <div class="team-role">Evaluadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Yuli Buritica">
+                <div class="team-name">Yuli Buritica</div>
+                <div class="team-role">Evaluadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Santiago Cifuentes">
+                <div class="team-name">Santiago Cifuentes</div>
+                <div class="team-role">Evaluador de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Genesis Molina">
+                <div class="team-name">Genesis Molina</div>
+                <div class="team-role">Servicio al Representado</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="carousel-item" aria-hidden="true">
+            <div class="team-slide">
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Andrei Areas">
+                <div class="team-name">Andrei Areas</div>
+                <div class="team-role">Coordinador de corte</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Oscar Beltran">
+                <div class="team-name">Oscar Beltran</div>
+                <div class="team-role">Manejador de Corte</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Manfredi Bustillo">
+                <div class="team-name">Manfredi Bustillo</div>
+                <div class="team-role">Manejador de Corte</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Cielo Zenanovich">
+                <div class="team-name">Cielo Zenanovich</div>
+                <div class="team-role">Traductora</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="carousel-item" aria-hidden="true">
+            <div class="team-slide">
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Daniel Rodriguez">
+                <div class="team-name">Daniel Rodriguez</div>
+                <div class="team-role">Traductor</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Nancy Sandoval">
+                <div class="team-name">Nancy Sandoval</div>
+                <div class="team-role">Manejadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Oscar Hoyos">
+                <div class="team-name">Oscar Hoyos</div>
+                <div class="team-role">Manejador de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Verel Monrroy">
+                <div class="team-name">Verel Monrroy</div>
+                <div class="team-role">Manejadora de caso</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 7 (last 4 names, slightly overlaps into 7th slide to fit list) -->
+          <div class="carousel-item" aria-hidden="true">
+            <div class="team-slide">
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Wendy Villalobos">
+                <div class="team-name">Wendy Villalobos</div>
+                <div class="team-role">Manejadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Natalia Rondon">
+                <div class="team-name">Natalia Rondon</div>
+                <div class="team-role">Manejadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="Eva Chan">
+                <div class="team-name">Eva Chan</div>
+                <div class="team-role">Manejadora de caso</div>
+              </div>
+              <div class="team-card">
+                <img src="genesis.jpeg" alt="---">
+                <div class="team-name">—</div>
+                <div class="team-role">—</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="carousel-nav">
+          <button class="nav-btn" data-action="prev" aria-label="Anterior">◀</button>
+          <button class="nav-btn" data-action="next" aria-label="Siguiente">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios carousel -->
+    <section id="testimonios" class="reveal" style="margin-top:16px">
+      <h2>Testimonios que inspiran confianza</h2>
+      <p class="muted">Historias reales de familias y personas que recuperaron su tranquilidad.</p>
+
+      <div style="margin-top:12px;" class="carousel" aria-roledescription="carousel" aria-label="Testimonios">
+        <div class="carousel-track" id="testiTrack">
+          <div class="carousel-item" aria-hidden="false">
+            <div class="testimonial">
+              <img src="genesis.jpeg" alt="Rut M. Herrera">
+              <div>
+                <strong>Rut M. Herrera — Ecuador</strong>
+                <div class="muted">"Me siento tranquila y muy contenta por todo y con todos."</div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" aria-hidden="true">
+            <div class="testimonial">
+              <img src="genesis.jpeg" alt="Katherine Delgado">
+              <div>
+                <strong>Katherine Delgado — Venezuela</strong>
+                <div class="muted">"A pesar de que nosotras estamos en New York y usted en San Antonio, TX, nunca nos hemos sentido solas"</div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" aria-hidden="true">
+            <div class="testimonial">
+              <img src="genesis.jpeg" alt="Eddis Pachano">
+              <div>
+                <strong>Eddis Pachano — Cuba</strong>
+                <div class="muted">"Los vi en una publicación en facebook y puedo decir que son los mejores! Los recomiendo ampliamente"</div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" aria-hidden="true">
+  <div class="testimonial">
+    <img src="genesis.jpeg" alt="Carlos Hernández">
+    <div>
+      <strong>Carlos Hernández — México</strong>
+      <div class="muted">"Jamás pensé que mi caso tendría solución. RedHis me devolvió la tranquilidad."</div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item" aria-hidden="true">
+  <div class="testimonial">
+    <img src="genesis.jpeg" alt="María Fernanda López">
+    <div>
+      <strong>María Fernanda López — Nicaragua</strong>
+      <div class="muted">"Llegué con miedo y me trataron como familia. Hoy estoy llena de esperanza."</div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item" aria-hidden="true">
+  <div class="testimonial">
+    <img src="genesis.jpeg" alt="José Luis Martínez">
+    <div>
+      <strong>José Luis Martínez — El Salvador</strong>
+      <div class="muted">"Después de años de espera, por fin sentí que alguien luchaba por mí."</div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item" aria-hidden="true">
+  <div class="testimonial">
+    <img src="genesis.jpeg" alt="Andrea Rojas">
+    <div>
+      <strong>Andrea Rojas — Perú</strong>
+      <div class="muted">"Lo que más me gustó fue su honestidad y claridad en el proceso."</div>
+    </div>
+  </div>
+</div>
+
+<div class="carousel-item" aria-hidden="true">
+  <div class="testimonial">
+    <img src="genesis.jpeg" alt="Laura Peña">
+    <div>
+      <strong>Laura Peña — República Dominicana</strong>
+      <div class="muted">"No tenía documentos. RedHis me abrió las puertas."</div>
+    </div>
+  </div>
+</div>
+        </div>
+
+        <div class="carousel-nav">
+          <button class="nav-btn" data-action="prev-t" aria-label="Anterior">◀</button>
+          <button class="nav-btn" data-action="next-t" aria-label="Siguiente">▶</button>
+        </div>
+      </div>
+    </section>
+    <div class="imagenLlamado reveal">
+        <img src="fondobanner.webp" alt="">
+    </div>
+    <!-- Contact / Form -->
+    <section id="contacto" class="reveal" style="margin-top:18px;">
+      <div class="section-inner">
+        <div class="sec-left">
+          <h2>Evalúa tu caso sin costo</h2>
+          <p class="muted">Completa el formulario y en 24-48 horas un evaluador se comunicará contigo.</p>
+
+          <form id="contactForm">
+            <label for="name">Nombre completo</label>
+            <input id="name" name="name" type="text" required placeholder="Tu nombre completo" />
+
+            <div class="form-grid">
+              <div>
+                <label for="city">Ciudad donde te encuentras</label>
+                <input id="city" name="city" type="text" required placeholder="ej: Miami, FL" />
+              </div>
+              <div>
+                <label for="phone">Número de contacto</label>
+                <input id="phone" name="phone" type="tel" required placeholder="ej: +1 555 123 4567" />
+              </div>
+            </div>
+
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" required placeholder="tucorreo@ejemplo.com" />
+
+            <label for="caseType">Tipo de proceso</label>
+            <select id="caseType" name="caseType">
+              <option>Asilo</option>
+              <option>Visa U</option>
+              <option>VAWA</option>
+              <option>Peticiones Familiares</option>
+              <option>Residencia / Ajuste de estatus</option>
+              <option>Procesos de Corte</option>
+              <option>Otro</option>
+            </select>
+
+            <label for="message">Breve descripción de tu caso (opcional)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Cuéntanos brevemente lo que ha pasado..."></textarea>
+
+            <div style="display:flex;gap:12px;align-items:center;margin-top:8px">
+              <button class="btn" type="submit">Solicitar evaluación gratis</button>
+              <button type="button" class="btn secondary" id="btnContactPhone">Llamarme / WhatsApp</button>
+            </div>
+
+            <div id="formMsg" class="muted" style="margin-top:8px;font-size:14px"></div>
+          </form>
+        </div>
+        <div class="sec-right">
+          <div style="padding:12px;background:linear-gradient(180deg,var(--accent),#fff);border-radius:12px;text-align:left">
+            <strong>Beneficios inmediatos</strong>
+            <ul style="margin-top:8px;color:var(--muted)">
+              <li>Evaluación confidencial sin costo</li>
+              <li>Conexión con abogados en cualquier estado</li>
+              <li>Seguimiento personalizado hasta la solución</li>
+            </ul>
+            <div style="margin-top:12px"><small class="muted">La información que envíes se utiliza únicamente para evaluación legal y contacto.</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <strong>RedHis</strong> — Canal de abogados en español</div>
+      <div style="font-size:13px">Atención en todo EE.UU · Evaluación sin costo</div>
+    </footer>
+  </div>
+
+  <script>
+    /* Reveal on scroll */
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('visible') }
+      })
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    /* Mobile menu toggle */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger && hamburger.addEventListener('click', ()=>{
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+      if(!expanded){
+        mobileNav.style.display = 'flex';
+        mobileNav.setAttribute('aria-hidden','false');
+      } else {
+        mobileNav.style.display = 'none';
+        mobileNav.setAttribute('aria-hidden','true');
+      }
+    });
+    // Close mobile nav when a link is clicked (for better UX)
+    document.querySelectorAll('.mobile-link').forEach(a=>{
+      a.addEventListener('click', ()=>{ mobileNav.style.display = 'none'; hamburger.setAttribute('aria-expanded','false') });
+    });
+
+    /* Smooth scroll to contact */
+    const scrollToContact = ()=>{ document.getElementById('contacto').scrollIntoView({behavior:'smooth',block:'start'}) }
+    document.getElementById('btn-eval')?.addEventListener('click', scrollToContact);
+    document.getElementById('cta-top')?.addEventListener('click', scrollToContact);
+    document.getElementById('cta-mid')?.addEventListener('click', scrollToContact);
+    document.getElementById('cta-side')?.addEventListener('click', scrollToContact);
+    document.getElementById('cta-top-mobile')?.addEventListener('click', scrollToContact);
+
+    /* WhatsApp CTAs */
+    const WA_LINK = 'https://wa.me/13469467525';
+    document.getElementById('btn-llamar')?.addEventListener('click', ()=>{ window.open(WA_LINK, '_blank') });
+    document.getElementById('btnContactPhone')?.addEventListener('click', ()=>{ window.open(WA_LINK, '_blank') });
+    // Side CTA can also go to WA or to contact (we keep both options)
+    document.getElementById('cta-side')?.addEventListener('click', ()=>{ window.open(WA_LINK, '_blank') });
+
+    /* Generic carousel factory */
+    function createCarousel(trackId, prevBtnSelector, nextBtnSelector, interval=4500){
+      const track = document.getElementById(trackId);
+      if(!track) return;
+      const items = Array.from(track.children);
+      let idx = 0, timer = null;
+
+      // Ensure each .carousel-item fills the visible width
+      function show(i){
+        const w = track.parentElement.offsetWidth; // visible container width
+        track.style.transform = `translateX(-${i * w}px)`;
+        items.forEach((it, k)=> it.setAttribute('aria-hidden', k !== i));
+      }
+
+      function next(){ idx = (idx + 1) % items.length; show(idx); }
+      function prev(){ idx = (idx - 1 + items.length) % items.length; show(idx); }
+
+      // Attach nav buttons
+      document.querySelectorAll(prevBtnSelector).forEach(btn => btn.addEventListener('click', ()=>{ prev(); resetTimer(); }));
+      document.querySelectorAll(nextBtnSelector).forEach(btn => btn.addEventListener('click', ()=>{ next(); resetTimer(); }));
+
+      function startTimer(){ timer = setInterval(next, interval); }
+      function resetTimer(){ clearInterval(timer); startTimer(); }
+
+      // Pause on hover (desktop)
+      track.parentElement.addEventListener('mouseenter', ()=> clearInterval(timer));
+      track.parentElement.addEventListener('mouseleave', ()=> startTimer());
+
+      // Resize handling
+      window.addEventListener('resize', ()=> show(idx));
+
+      // Initial show
+      show(idx);
+      startTimer();
+    }
+
+    // Initialize carousels
+    createCarousel('teamTrack','[data-action="prev"]','[data-action="next"]',5000);
+    createCarousel('testiTrack','[data-action="prev-t"]','[data-action="next-t"]',5200);
+
+    /* Form submit to Google Sheets */
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('formMsg');
+const submitBtn = form?.querySelector('button[type="submit"]');
+
+if (form && submitBtn) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Texto original del botón para restaurarlo luego
+    const originalText = submitBtn.textContent;
+
+    // Cambiar a "Enviando..." y deshabilitar botón temporalmente
+    submitBtn.textContent = "Enviando…";
+    submitBtn.disabled = true;
+
+    const data = {
+      name: form.name.value.trim(),
+      city: form.city.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      caseType: form.caseType.value,
+      message: form.message.value.trim(),
+      submittedAt: new Date().toISOString()
+    };
+
+    try {
+      const res = await fetch('https://script.google.com/macros/s/AKfycbzR0X44bARgn2IlgVL_iKGDahnE6jGcREvvZNLpsWhvr0qXrLs6BL_z_-i66lIuDZvR/exec', {
+        method: 'POST',
+        body: JSON.stringify(data) // 👈 SIN HEADERS
+      });
+
+      if (res.ok) {
+        msg.textContent = "✅ ¡Gracias! Tu evaluación ha sido solicitada. Pronto nos comunicaremos contigo.";
+        form.reset();
+      } else {
+        msg.textContent = "⚠️ Ocurrió un error en el servidor. Intenta de nuevo.";
+      }
+    } catch (err) {
+      console.error(err);
+      msg.textContent = "❌ Error de conexión. Intenta nuevamente o contáctanos por WhatsApp.";
+    } finally {
+      // Restaurar botón
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}
+
+
+    /* Optional: unmute video cuando se reproduce */
+    const v = document.getElementById('ceoVideo');
+    v && v.addEventListener('play', ()=>{ v.muted = false });
+
+  </script>
+</body>
+</html>
